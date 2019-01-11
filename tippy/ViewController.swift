@@ -19,19 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let control = BetterSegmentedControl(
-            frame: CGRect(x: 0, y: 0, width: 300, height: 44),
-            segments: LabelSegment.segments(withTitles: ["One", "Two", "Three"],
-                                            normalFont: UIFont(name: "HelveticaNeue-Light", size: 14.0)!,
-                                            normalTextColor: .lightGray,
-                                            selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
-                                            selectedTextColor: .white),
-            index: 1,
-            options: [.backgroundColor(.darkGray),
-                      .indicatorViewBackgroundColor(.blue)])
-        control.addTarget(self, action: #selector(ViewController.controlValueChanged(_:)), for: .valueChanged)
-        view.addSubview(control)
-        
         // Do any additional setup after loading the view, typically from a nib.
         let defaults = UserDefaults.standard
         defaults.set(0.18, forKey: "one")
